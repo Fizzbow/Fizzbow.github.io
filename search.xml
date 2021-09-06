@@ -4,26 +4,19 @@
   
     
     <entry>
-      <title>js原型原型链相关</title>
+      <title>js数据类型和数据结构</title>
       <link href="/2021/08/29/paper-1/"/>
       <url>/2021/08/29/paper-1/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构 = 数据的存储+算法</p><h2 id="按逻辑结构分类"><a href="#按逻辑结构分类" class="headerlink" title="按逻辑结构分类"></a>按逻辑结构分类</h2><p>###1. 集合（无逻辑关系）</p><p>###2. 线性结构（线性表）</p><p>一维数组、 队列 ，栈</p><h3 id="3-非线性结构"><a href="#3-非线性结构" class="headerlink" title="3. 非线性结构"></a>3. 非线性结构</h3><p>树（一对多）、 图（多对多）、 多维数组</p><h2 id="按存储结构分类"><a href="#按存储结构分类" class="headerlink" title="按存储结构分类"></a>按存储结构分类</h2><h3 id="1-顺序存储结构"><a href="#1-顺序存储结构" class="headerlink" title="1. 顺序存储结构"></a>1. 顺序存储结构</h3><h3 id="2-链式"><a href="#2-链式" class="headerlink" title="2. 链式"></a>2. 链式</h3><h3 id="3-索引"><a href="#3-索引" class="headerlink" title="3. 索引"></a>3. 索引</h3><h3 id="4-散列"><a href="#4-散列" class="headerlink" title="4. 散列"></a>4. 散列</h3>]]></content>
       
       
       
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hexo艰难建站之旅</title>
-      <link href="/2021/08/29/paper/"/>
-      <url>/2021/08/29/paper/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
       
     </entry>
     
