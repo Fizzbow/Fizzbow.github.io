@@ -8,13 +8,32 @@
       <link href="/2021/08/29/paper-1/"/>
       <url>/2021/08/29/paper-1/</url>
       
-        <content type="html"><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构 = 数据的存储+算法</p><h2 id="按逻辑结构分类"><a href="#按逻辑结构分类" class="headerlink" title="按逻辑结构分类"></a>按逻辑结构分类</h2><p>###1. 集合（无逻辑关系）</p><p>###2. 线性结构（线性表）</p><p>一维数组、 队列 ，栈</p><h3 id="3-非线性结构"><a href="#3-非线性结构" class="headerlink" title="3. 非线性结构"></a>3. 非线性结构</h3><p>树（一对多）、 图（多对多）、 多维数组</p><h2 id="按存储结构分类"><a href="#按存储结构分类" class="headerlink" title="按存储结构分类"></a>按存储结构分类</h2><h3 id="1-顺序存储结构"><a href="#1-顺序存储结构" class="headerlink" title="1. 顺序存储结构"></a>1. 顺序存储结构</h3><h3 id="2-链式"><a href="#2-链式" class="headerlink" title="2. 链式"></a>2. 链式</h3><h3 id="3-索引"><a href="#3-索引" class="headerlink" title="3. 索引"></a>3. 索引</h3><h3 id="4-散列"><a href="#4-散列" class="headerlink" title="4. 散列"></a>4. 散列</h3>]]></content>
+        <content type="html"><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构 = 数据的存储+算法</p><h2 id="按逻辑结构分类"><a href="#按逻辑结构分类" class="headerlink" title="按逻辑结构分类"></a>按逻辑结构分类</h2><h3 id="1-集合（无逻辑关系）"><a href="#1-集合（无逻辑关系）" class="headerlink" title="1. 集合（无逻辑关系）"></a>1. 集合（无逻辑关系）</h3><h3 id="2-线性结构（线性表）"><a href="#2-线性结构（线性表）" class="headerlink" title="2. 线性结构（线性表）"></a>2. 线性结构（线性表）</h3><p>一维数组、 队列 ，栈</p><h3 id="3-非线性结构"><a href="#3-非线性结构" class="headerlink" title="3. 非线性结构"></a>3. 非线性结构</h3><p>树（一对多）、 图（多对多）、 多维数组</p><h2 id="按存储结构分类"><a href="#按存储结构分类" class="headerlink" title="按存储结构分类"></a>按存储结构分类</h2><h3 id="1-顺序存储结构"><a href="#1-顺序存储结构" class="headerlink" title="1. 顺序存储结构"></a>1. 顺序存储结构</h3><h3 id="2-链式"><a href="#2-链式" class="headerlink" title="2. 链式"></a>2. 链式</h3><h3 id="3-索引"><a href="#3-索引" class="headerlink" title="3. 索引"></a>3. 索引</h3><h3 id="4-散列"><a href="#4-散列" class="headerlink" title="4. 散列"></a>4. 散列</h3><h2 id="JS的数据类型和数据结构"><a href="#JS的数据类型和数据结构" class="headerlink" title="JS的数据类型和数据结构"></a>JS的数据类型和数据结构</h2><h3 id="基本类型（栈stack）"><a href="#基本类型（栈stack）" class="headerlink" title="基本类型（栈stack）"></a>基本类型（栈stack）</h3><p>Number，String，Boolean，Null，Undefind，Symbol，null（不可用typeof检测）</p><h3 id="引用数据类型（堆head）"><a href="#引用数据类型（堆head）" class="headerlink" title="引用数据类型（堆head）"></a>引用数据类型（堆head）</h3><p>Object（包括Array，Function，Data）   </p><h3 id="每个数据都需要一个内存空间"><a href="#每个数据都需要一个内存空间" class="headerlink" title="每个数据都需要一个内存空间"></a>每个数据都需要一个内存空间</h3><table><thead><tr><th>栈</th><th>堆</th></tr></thead><tbody><tr><td>可直接操作保存在栈内存空间的值</td><td>不允许直接访问，不能直接操作</td></tr><tr><td>变量名，值       —&gt;引用</td><td>值</td></tr><tr><td>c，0X0012</td><td>[1,2,3]</td></tr></tbody></table>]]></content>
       
       
       
         <tags>
             
             <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用hexo建站及平常报错总结</title>
+      <link href="/2021/08/29/paper/"/>
+      <url>/2021/08/29/paper/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>从零开始搭建hexo到安装theme主题这段比较顺利，到安装主题之后开始出现错误</p></blockquote><h2 id="1-Error-no-such-file-or-directory-scandir-‘…-’"><a href="#1-Error-no-such-file-or-directory-scandir-‘…-’" class="headerlink" title="1. Error:no such file or directory,scandir ‘….’"></a>1. Error:no such file or directory,scandir ‘….’</h2><p>加入主题之后运行所有hexo命令都会报如下错误<br><img src="https://secure.wostatic.cn/static/fbLJ3TbAANYrow5Nhox5vd/image.png?auth_key=1630934338-wG6Vbvq37vskJ5H1mAsske-0-b7026db0be63dd1c5981d42736ce9487" alt="图片alt" title="1"><br>排查之后，blog主题这一栏填成了别人主题的theme地址，直接写上theme主题名字就行了<br><img src="https://secure.wostatic.cn/static/9jCZzn6Rd4oaxL5U3be6zy/image.png?auth_key=1630934823-fvy52AmygoKDd17KvXLt7S-0-942742708c35fc9490748befe8ae2c5b" alt="图片alt" title="1"><br>接着除了hexo-d其他命令都能运行</p><h2 id="2-spawn-failed"><a href="#2-spawn-failed" class="headerlink" title="2.spawn failed"></a>2.spawn failed</h2><p>用hexo-d更新的时候报错 <code>spawn failed</code><br>检查了自己的github ssh地址 显示：but Github does not provide shell access<br>更改myblog目录下的config.yml的repo<br><img src="https://secure.wostatic.cn/static/jiZ9cUXz1iGEp5615W9Vco/image.png?auth_key=1630935067-dZxE2WxmXxFiEtVYip5gmW-0-d578807bf6ade56e0f34a9dd4f88fa8b" alt="图片alt" title="2"><br><img src="https://secure.wostatic.cn/static/2SMtUVTxRJtQL9NABjzPaB/image.png?auth_key=1630935308-e7Md7wwo9XEoVFHPRPKAYG-0-c355c98775dfedb580da864c308c6877" alt="图片alt" title="2"></p><h2 id="3-not-a-git-repository-or-any-of-the-parent-directories-git"><a href="#3-not-a-git-repository-or-any-of-the-parent-directories-git" class="headerlink" title="3.not a git repository (or any of the parent directories): .git"></a>3.not a git repository (or any of the parent directories): .git</h2><blockquote><p>暂时不太清楚这个的报错原因，可能是当时服务器的问题，第二天登了之后就好了</p></blockquote><p><img src="https://secure.wostatic.cn/static/nf4XDMH4KH2B4rEQx5v488/image.png?auth_key=1630935436-WC23n2WRqdigVK1o6VpJQ-0-8e4152745297a8debdf61cde4a5cdb5f" alt="图片alt" title="3"></p><h2 id="4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…"><a href="#4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…" class="headerlink" title="4.can not read a block mapping entry ;a multiline key may not be an implicit key ….."></a>4.can not read a block mapping entry ;a multiline key may not be an implicit key …..</h2><p>上传paper.md的时候报错<br><img src="https://secure.wostatic.cn/static/xBsDfPxzLL2u2enPHNYuuu/image.png?auth_key=1630935556-rxQphccoY43ShV2bAyrXNi-0-15aa33c265b57ad1718045efadd1444f" alt="图片alt" title="4"><br>因为paper.md标题中的语法不是很规范，冒号后面没有加空格，及config.yml中的语法也该如此<br>正确书写应该是tags： js<br><img src="https://secure.wostatic.cn/static/2cB2wH4JxHnonLnEy8h6jc/image.png?auth_key=1630935699-jUZxhzaXH1RWPEafk1C9xo-0-a310b3181af9f3e7277eca87c965876a" alt="图片alt" title="4"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
             
         </tags>
       
