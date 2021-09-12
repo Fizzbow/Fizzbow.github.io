@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>post_name</title>
+      <link href="/2021/09/12/post-name/"/>
+      <url>/2021/09/12/post-name/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用hexo报错总结</title>
+      <link href="/2021/09/12/paper-3/"/>
+      <url>/2021/09/12/paper-3/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>从零开始搭建hexo到安装theme主题这段比较顺利，到安装主题之后开始出现错误</p></blockquote><h2 id="1-Error-no-such-file-or-directory-scandir-‘…-’"><a href="#1-Error-no-such-file-or-directory-scandir-‘…-’" class="headerlink" title="1. Error:no such file or directory,scandir ‘….’"></a>1. Error:no such file or directory,scandir ‘….’</h2><p>加入主题之后运行所有hexo命令都会报如下错误<br><img src="image2.png" alt="alt"><br>排查之后，blog主题这一栏填成了别人主题的theme地址，直接写上theme主题名字就行了<br><img src="img3.png" alt="alt"><br>接着除了hexo-d其他命令都能运行</p><h2 id="2-spawn-failed"><a href="#2-spawn-failed" class="headerlink" title="2.spawn failed"></a>2.spawn failed</h2><p>用hexo-d更新的时候报错 <code>spawn failed</code><br>检查了自己的github ssh地址 显示：but Github does not provide shell access<br>更改myblog目录下的config.yml的repo<br><img src="img4.png" alt="图片无法加载sorry"></p><h2 id="3-not-a-git-repository-or-any-of-the-parent-directories-git"><a href="#3-not-a-git-repository-or-any-of-the-parent-directories-git" class="headerlink" title="3.not a git repository (or any of the parent directories): .git"></a>3.not a git repository (or any of the parent directories): .git</h2><blockquote><p>暂时不太清楚这个的报错原因，可能是当时服务器的问题，第二天登了之后就好了</p></blockquote><p><img src="img7.png" alt="图片alt"></p><h2 id="4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…"><a href="#4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…" class="headerlink" title="4.can not read a block mapping entry ;a multiline key may not be an implicit key ….."></a>4.can not read a block mapping entry ;a multiline key may not be an implicit key …..</h2><p>上传paper.md的时候报错<br><img src="img10.png" alt="图片alt"><br>因为paper.md标题中的语法不是很规范，冒号后面没有加空格，及config.yml中的语法也该如此<br>正确书写应该是tags： js<br><img src="img11.png" alt="图片alt"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js数据类型和数据结构</title>
       <link href="/2021/08/29/paper-1/"/>
       <url>/2021/08/29/paper-1/</url>
@@ -23,11 +55,11 @@
     
     
     <entry>
-      <title>使用hexo建站及平常报错总结</title>
+      <title>hexo用法</title>
       <link href="/2021/08/29/paper/"/>
       <url>/2021/08/29/paper/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>从零开始搭建hexo到安装theme主题这段比较顺利，到安装主题之后开始出现错误</p></blockquote><h2 id="1-Error-no-such-file-or-directory-scandir-‘…-’"><a href="#1-Error-no-such-file-or-directory-scandir-‘…-’" class="headerlink" title="1. Error:no such file or directory,scandir ‘….’"></a>1. Error:no such file or directory,scandir ‘….’</h2><p>加入主题之后运行所有hexo命令都会报如下错误<br><img src="https://secure.wostatic.cn/static/fbLJ3TbAANYrow5Nhox5vd/image.png?auth_key=1630934338-wG6Vbvq37vskJ5H1mAsske-0-b7026db0be63dd1c5981d42736ce9487" alt="图片alt" title="1"><br>排查之后，blog主题这一栏填成了别人主题的theme地址，直接写上theme主题名字就行了<br><img src="https://secure.wostatic.cn/static/9jCZzn6Rd4oaxL5U3be6zy/image.png?auth_key=1630934823-fvy52AmygoKDd17KvXLt7S-0-942742708c35fc9490748befe8ae2c5b" alt="图片alt" title="1"><br>接着除了hexo-d其他命令都能运行</p><h2 id="2-spawn-failed"><a href="#2-spawn-failed" class="headerlink" title="2.spawn failed"></a>2.spawn failed</h2><p>用hexo-d更新的时候报错 <code>spawn failed</code><br>检查了自己的github ssh地址 显示：but Github does not provide shell access<br>更改myblog目录下的config.yml的repo<br><img src="https://secure.wostatic.cn/static/jiZ9cUXz1iGEp5615W9Vco/image.png?auth_key=1630935067-dZxE2WxmXxFiEtVYip5gmW-0-d578807bf6ade56e0f34a9dd4f88fa8b" alt="图片alt" title="2"><br><img src="https://secure.wostatic.cn/static/2SMtUVTxRJtQL9NABjzPaB/image.png?auth_key=1630935308-e7Md7wwo9XEoVFHPRPKAYG-0-c355c98775dfedb580da864c308c6877" alt="图片alt" title="2"></p><h2 id="3-not-a-git-repository-or-any-of-the-parent-directories-git"><a href="#3-not-a-git-repository-or-any-of-the-parent-directories-git" class="headerlink" title="3.not a git repository (or any of the parent directories): .git"></a>3.not a git repository (or any of the parent directories): .git</h2><blockquote><p>暂时不太清楚这个的报错原因，可能是当时服务器的问题，第二天登了之后就好了</p></blockquote><p><img src="https://secure.wostatic.cn/static/nf4XDMH4KH2B4rEQx5v488/image.png?auth_key=1630935436-WC23n2WRqdigVK1o6VpJQ-0-8e4152745297a8debdf61cde4a5cdb5f" alt="图片alt" title="3"></p><h2 id="4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…"><a href="#4-can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-…" class="headerlink" title="4.can not read a block mapping entry ;a multiline key may not be an implicit key ….."></a>4.can not read a block mapping entry ;a multiline key may not be an implicit key …..</h2><p>上传paper.md的时候报错<br><img src="https://secure.wostatic.cn/static/xBsDfPxzLL2u2enPHNYuuu/image.png?auth_key=1630935556-rxQphccoY43ShV2bAyrXNi-0-15aa33c265b57ad1718045efadd1444f" alt="图片alt" title="4"><br>因为paper.md标题中的语法不是很规范，冒号后面没有加空格，及config.yml中的语法也该如此<br>正确书写应该是tags： js<br><img src="https://secure.wostatic.cn/static/2cB2wH4JxHnonLnEy8h6jc/image.png?auth_key=1630935699-jUZxhzaXH1RWPEafk1C9xo-0-a310b3181af9f3e7277eca87c965876a" alt="图片alt" title="4"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><blockquote><p>Hexo 有多种图片插入方式，可以将图片存放在本地引用或者将图片放在 CDN 上引用，插入图片的常用方式，你也可以理解为在 Markdown 中插入图片。</p></blockquote><h2 id="本地绝对路径"><a href="#本地绝对路径" class="headerlink" title="本地绝对路径"></a>本地绝对路径</h2><p>当 Hexo 项目中只用到少量图片时，可以将图片统一放在 source/images 文件夹中，通过 Markdown 语法访问它们。<br><code>![alt](/images/test.jpg)</code></p><h2 id="本地相对路径-本博使用"><a href="#本地相对路径-本博使用" class="headerlink" title="本地相对路径 (本博使用)"></a>本地相对路径 (本博使用)</h2><p>图片除了可以放在统一的 images 文件夹中，还可以放在文章自己的目录中，文章的目录可以通过配置 _config.yml 来生成。配置如下：</p><p><code>post_asset_folder: true</code></p><p>将 _config.yml 文件中的配置项 post_asset_folder 设为 true 后，执行命令 $ hexo new post_name，在 source/_posts 中会生成文章 post_name.md 和同名文件夹 post_name 。将图片资源放在 post_name 中，文章就可以使用相对路径引用图片资源了。</p><p><code>![alt](test.jpg)</code></p>]]></content>
       
       
       
