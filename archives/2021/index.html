@@ -11,32 +11,10 @@
 
 1. Error:no such file or directory,scandir ‘….’加入主题之后运行所有hexo命令都会报如下错误排查之后，blog主题这一栏填成了别人主题的theme地址，直接写上theme主题名字就行了接着除了hexo-d其他命令都能运行
 2.spawn failed用hexo-d更新的时候报错 spawn failed检查了自己的github ssh地址 显示：but Github does not provide shell access更改myblog目录下的config.yml的repo
-3.not a git repository (or any of the parent dire..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/paper-3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">js数据类型和数据结构</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">数据结构数据结构 = 数据的存储+算法
-按逻辑结构分类1. 集合（无逻辑关系）2. 线性结构（线性表）一维数组、 队列 ，栈
-3. 非线性结构树（一对多）、 图（多对多）、 多维数组
-按存储结构分类1. 顺序存储结构2. 链式3. 索引4. 散列JS的数据类型和数据结构基本类型（栈stack）Number，String，Boolean，Null，Undefind，Symbol，null（不可用typeof检测）
-引用数据类型（堆head）Object（包括Array，Function，Data）   
-每个数据都需要一个内存空间
-
-
-栈
-堆
-
-
-
-可直接操作保存在栈内存空间的值
-不允许直接访问，不能直接操作
-
-
-变量名，值       —&amp;gt;引用
-值
-
-
-c，0X0012
-[1,2,3]
-
-
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/hexo"><i class="tag post-item-tag">hexo</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper/">hexo用法</a></h2><time class="has-text-grey" datetime="2021-08-29T13:55:20.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">插入图片
+3.not a git repository (or any of the parent dire..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/paper-3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">js数据类型和数据结构</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">数据结构栈
+一种遵从先进后出（LIFO）原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都靠近栈底
+一摞叠起来的数或盘子都可以看做一个栈，我们想要拿出最底下的书或盘子，一定要先将上面的书移走才可以
+栈也被用在编程语言的编译器和内存中保存变量，方法调用12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//在js中使用类来实现一个栈class Stack {constructor() {this.items = []}// 入栈push(element) {this.items.push(eleme..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/hexo"><i class="tag post-item-tag">hexo</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper/">hexo用法</a></h2><time class="has-text-grey" datetime="2021-08-29T13:55:20.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">插入图片
 Hexo 有多种图片插入方式，可以将图片存放在本地引用或者将图片放在 CDN 上引用，插入图片的常用方式，你也可以理解为在 Markdown 中插入图片。
 
 本地绝对路径当 Hexo 项目中只用到少量图片时，可以将图片统一放在 source/images 文件夹中，通过 Markdown 语法访问它们。![alt](/images/test.jpg)

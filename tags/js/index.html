@@ -6,32 +6,10 @@
 123456for(let i = 0;i&amp;lt;arr.length;++i){    console.log(arr[i]);}for(let i in arr){    console.log(arr[i])}
 使用for/of,则可以直接访问数组的元素值
 123for(const v of arr){    console.log(v)}
-使用forE..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">js数据类型和数据结构</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">数据结构数据结构 = 数据的存储+算法
-按逻辑结构分类1. 集合（无逻辑关系）2. 线性结构（线性表）一维数组、 队列 ，栈
-3. 非线性结构树（一对多）、 图（多对多）、 多维数组
-按存储结构分类1. 顺序存储结构2. 链式3. 索引4. 散列JS的数据类型和数据结构基本类型（栈stack）Number，String，Boolean，Null，Undefind，Symbol，null（不可用typeof检测）
-引用数据类型（堆head）Object（包括Array，Function，Data）   
-每个数据都需要一个内存空间
-
-
-栈
-堆
-
-
-
-可直接操作保存在栈内存空间的值
-不允许直接访问，不能直接操作
-
-
-变量名，值       —&amp;gt;引用
-值
-
-
-c，0X0012
-[1,2,3]
-
-
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+使用forE..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">js数据类型和数据结构</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">数据结构栈
+一种遵从先进后出（LIFO）原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都靠近栈底
+一摞叠起来的数或盘子都可以看做一个栈，我们想要拿出最底下的书或盘子，一定要先将上面的书移走才可以
+栈也被用在编程语言的编译器和内存中保存变量，方法调用12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//在js中使用类来实现一个栈class Stack {constructor() {this.items = []}// 入栈push(element) {this.items.push(eleme..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
