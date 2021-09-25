@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JS原型</title>
+      <link href="/2021/09/25/paper-prototype/"/>
+      <url>/2021/09/25/paper-prototype/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h1><h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h2><blockquote><p>在规范里，prototype被定义为<strong>给其他对象提供共享属性的对象</strong></p></blockquote><ul><li>prototype自己也是对象，只是被用以承担某个职能</li><li>当我们说prototype对象时实际上说的是’xxx对象的prototype对象’，如果不跟其他对象产生关联，就不构成prototype这个称谓，因此，prototype描述的是两个对象之间的某种关系(其中一个为另一个提供属性访问权限)</li><li>所有对象都可以作为另一个对象的prototype使用</li></ul><h2 id="隐式引用"><a href="#隐式引用" class="headerlink" title="隐式引用"></a>隐式引用</h2><blockquote><p>Every object has an implicit reference (called the object’s prototype)  所有对象都有一个隐式引用，它被称为这个对象的prototype原型<br><img src="1.jpg" alt="alt"><br>如图，我们只声明了obj对象的a，b两个属性，在控制台却发现它有__proto__属性，这意味着obj被隐式地挂在地挂载了另一个对象的引用置于__proto__属性中</p></blockquote><h2 id="历史问题：proto"><a href="#历史问题：proto" class="headerlink" title="历史问题：proto"></a>历史问题：<strong>proto</strong></h2><p>| es规范描述prototype是一个隐式引用，但之前的一些浏览器已经私自实现了__proto__这个属性，使得可以通过obj.__proto__访问到被定义为隐式属性的prototype<br><img src="2.jpg" alt="alt"></p><ul><li>如图，通过Object.getPrototypeOf(obj) 间接访问指定对象的 prototype 对象。</li><li>通过 Object.setPrototypeOf(obj, anotherObj) 间接设置指定对象的 prototype 对象。</li><li>部分浏览器提前开了 <strong>proto</strong> 的口子，使得可以通过 obj.<strong>proto</strong> 直接访问原型，通过 obj.<strong>proto</strong> = anotherObj 直接设置原型。</li><li>ECMAScript 2015 规范只好向事实低头，将 <strong>proto</strong> 属性纳入了规范的一部分。</li></ul><h2 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h2><p>在Object.prototype上有__proto__属性，它是一个访问器属性，在get方法里调用getPrototypeOf，在set方法里调用setPrototypeOf。因此可以让之前浏览器的不规范做法作为规范的特殊场景</p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var test = {</span><br><span class="line">    get a(){</span><br><span class="line">        return Object.getPrototypeOf(this)</span><br><span class="line">    },</span><br><span class="line">    set a(value){</span><br><span class="line">        return Object.setPrototypeOf(this,value)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">console.log('equal',test.a === test.__proto__)//true</span><br></pre></td></tr></tbody></table></figure><p>如上，我们基于</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>this/apply/call/bind</title>
       <link href="/2021/09/25/paper-this/"/>
       <url>/2021/09/25/paper-this/</url>
