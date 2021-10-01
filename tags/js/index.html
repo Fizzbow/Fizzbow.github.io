@@ -22,7 +22,18 @@ es5中，this永远指向最后调用它的对象
 123456for(let i = 0;i&amp;lt;arr.length;++i){    console.log(arr[i]);}for(let i in arr){    console.log(arr[i])}
 使用for/of,则可以直接访问数组的元素值
 123for(const v of arr){    console.log(v)}
-使用forE..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">js数据类型和数据结构</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2"></p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+使用forE..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">setTimeout与setInterval</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">setTimeout与setInterval
+有时我们并不想立即执行一个函数而是等待特定一段时间后再执行。这就是所谓的’计划调用(scheduling a call)’目前有两种方法可以实现：
+
+
+setTimeout：允许我们将函数推迟到一段时间间隔之后再执行
+setInterval：允许我们重复运行一个函数，从一段时间间隔之后开始运行，之后以该时间间隔连续重复运行该函数
+
+setTimeout语法：let timerId= setTimeout(func|code,[delay],[arg1],[arg2],...)
+
+func|code:想要执行的函数或代码字符串，一般传入的都是函数
+delay:执行前的延时，毫秒为单位1ms = 1s；
+arg1,arg2...:要传入被执行函数的参数列表例如下面这..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
