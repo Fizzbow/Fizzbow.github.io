@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Vue项目，仿写去哪儿app</title>
+      <link href="/2021/10/05/paper-project-VueWhere/"/>
+      <url>/2021/10/05/paper-project-VueWhere/</url>
+      
+        <content type="html"><![CDATA[<h1 id="首页数据前台接口部分"><a href="#首页数据前台接口部分" class="headerlink" title="首页数据前台接口部分"></a>首页数据前台接口部分</h1><h2 id="优化冗余路径"><a href="#优化冗余路径" class="headerlink" title="优化冗余路径"></a>优化冗余路径</h2><blockquote><p>把<a href="http://localhost:8080/static/mock">http://localhost:8080/static/mock</a>   冗余的路径替换成api</p></blockquote><p><img src="api1.jpg" alt="alt"><br><img src="api3.jpg" alt="alt"></p><blockquote><p>修改系统文件，在webpack下设置代理项，重置路径</p></blockquote><p><img src="api2.jpg" alt="alt"></p><h1 id="vue路由"><a href="#vue路由" class="headerlink" title="vue路由"></a>vue路由</h1><h2 id="项目中使用到的路由跳转的方法"><a href="#项目中使用到的路由跳转的方法" class="headerlink" title="项目中使用到的路由跳转的方法"></a>项目中使用到的路由跳转的方法</h2><h3 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h3><p><img src="router1.jpg" alt="alt"></p><ul><li><p>不带参数<br><code>&lt;router-link :to = "{name:'home'}"&gt;</code> 建议使用name<br><code>&lt;router-link :to = "{path:'/home'}"&gt;</code></p><blockquote><p>router-link中链接如果是’/‘开始就是从根路由开始,如果开始不带’/‘,则从当前路由开始</p></blockquote></li><li><p>带参数</p></li></ul><p><code>&lt;router-link :to="{name:'home',params:{id:1}}"&gt;</code></p><blockquote><p>params传参(类似post) 配置path:”/home:id”或path:”/home/:id”,刷新页面id会保留，不配置path；第一次可请求，刷新页面id会消失</p></blockquote><p><code>&lt;router-link :to = "{name:'home',query:{id:1}}"&gt;</code></p><blockquote><p>query传参(类似get，url后面会显示参数)路由不可配置</p></blockquote><h3 id="this-router-push-函数里调用"><a href="#this-router-push-函数里调用" class="headerlink" title="this.$router.push()(函数里调用)"></a>this.$router.push()(函数里调用)</h3><p><img src="router2.jpg" alt="alt"></p><ul><li><p>不带参数<br><code>this.$router.push('/home')</code><br><code>this.$router.push({name:'home'})</code><br><code>this.$router.push({path:'/home'})</code></p></li><li><p>query传参<br><code>this.$router.push({name:'home',query:{id:'1'})</code><br><code>this.$router.push({path:'/home',query:{id:'1'}})</code></p></li><li><p>params传参<br><code>this.$router.push(name:'home',params:{id:'1'})</code> 只能用name</p></li></ul><h2 id="keep-alive减少相同请求优化"><a href="#keep-alive减少相同请求优化" class="headerlink" title="keep-alive减少相同请求优化"></a>keep-alive减少相同请求优化</h2><ul><li>不切换城市的时候不需要重新发送dataHome请求<br><img src="route.jpg" alt="alt"></li><li>设置keep-alive<br><img src="route1.jpg" alt="alt"></li><li>需要重新设置Home里的请求数据的方法getHttp（）<br><img src="route2.jpg" alt="alt"></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS原型</title>
       <link href="/2021/09/25/paper-prototype/"/>
       <url>/2021/09/25/paper-prototype/</url>
