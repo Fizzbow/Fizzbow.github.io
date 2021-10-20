@@ -2,44 +2,89 @@
 <!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="forEach()
 forEach方法用于调用数组中的每个元素，将元素传递给回调函数，数组中的每个值都会调用回调函数
 
-语法：arr.forEach(function(currentValue,index,arr),isValue)
-第一个参数为回调函数
-currentValue：（必须）当前元素
-index：可选，当前元素的索引值
-arr：可选，当前元素所属的数组对象1234let arr = [1,2,3,4,5]arr.forEach((item,index,arr) =&amp;gt;{    console.log(index + ':' + item)})
+语法：arr.forEach(callback(currentValue,index,arr),isValue)callback    - currentValue：（必须）当前元素    - index：可选，当前元素的索引值    - arr：可选，当前元素所属的数组对象
+1234let arr = [1,2,3,4,5]arr.forEach((item,index,arr) =&amp;gt;{    console.log(index + ':' + item)})
 第二个参数
 用来绑定回调函数内的this变量(回调不能是箭头函数，因为箭头函数无this)
 
-12345let arr = [1,2,3,4]let.."><meta name="generator" content="Hexo 5.4.0">
+12345let arr =.."><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">JS数组遍历方法</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#forEach"><span class="toc-text">forEach()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E4%B8%BA%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="toc-text">第一个参数为回调函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-text">第二个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point"><span class="toc-text">Point</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map"><span class="toc-text">map()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E4%B8%BA%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0-1"><span class="toc-text">第一个参数为回调函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0-1"><span class="toc-text">第二个参数</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">JS数组遍历方法</h1><time class="has-text-grey" datetime="2021-10-17T04:04:03.000Z">2021-10-17</time><article class="mt-2 post-content"><h1 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h1><blockquote>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">JS数组遍历方法</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#forEach"><span class="toc-text">forEach()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0"><span class="toc-text">第二个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point"><span class="toc-text">Point</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map"><span class="toc-text">map()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%8F%82%E6%95%B0-1"><span class="toc-text">第二个参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-1"><span class="toc-text">Point</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for-of"><span class="toc-text">for of</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#filter"><span class="toc-text">filter()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#some-every"><span class="toc-text">some(),every()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-2"><span class="toc-text">Point</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reduce-reduceRight"><span class="toc-text">reduce(),reduceRight()</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">JS数组遍历方法</h1><time class="has-text-grey" datetime="2021-10-17T04:04:03.000Z">2021-10-17</time><article class="mt-2 post-content"><h1 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h1><blockquote>
 <p>forEach方法用于调用数组中的每个元素，将元素传递给回调函数，数组中的每个值都会调用回调函数</p>
 </blockquote>
-<p>语法：<code>arr.forEach(function(currentValue,index,arr),isValue)</code></p>
-<h2 id="第一个参数为回调函数"><a href="#第一个参数为回调函数" class="headerlink" title="第一个参数为回调函数"></a>第一个参数为回调函数</h2><ul>
-<li>currentValue：（必须）当前元素</li>
-<li>index：可选，当前元素的索引值</li>
-<li>arr：可选，当前元素所属的数组对象<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5]</span><br><span class="line">arr.forEach((item,index,arr) =&gt;{</span><br><span class="line">    console.log(index + ':' + item)</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<p>语法：<code>arr.forEach(callback(currentValue,index,arr),isValue)</code><br>callback<br>    - currentValue：（必须）当前元素<br>    - index：可选，当前元素的索引值<br>    - arr：可选，当前元素所属的数组对象</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5]</span><br><span class="line">arr.forEach((item,index,arr) =&gt;{</span><br><span class="line">    console.log(index + ':' + item)</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="第二个参数"><a href="#第二个参数" class="headerlink" title="第二个参数"></a>第二个参数</h2><blockquote>
 <p>用来绑定回调函数内的this变量(回调不能是箭头函数，因为箭头函数无this)</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4]</span><br><span class="line">let arr1 = [7,8,7,9]</span><br><span class="line">arr.forEach(function(item,index,arr){</span><br><span class="line">    console.log(this[index]);//[7,8,7.9]</span><br><span class="line">},arr1)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2></li>
+<h2 id="Point"><a href="#Point" class="headerlink" title="Point"></a>Point</h2><ul>
 <li>forEach方法不会改变原数组，也没有返回值</li>
 <li>forEach无法使用break，continue跳出循环</li>
 <li>forEach无法遍历对象，仅适用于数组的遍历</li>
 </ul>
 <h1 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h1><blockquote>
-<p>map()方法会返回一个新数组，该方法按照原始数组元素顺序依次处理元素<br>语法：<code>arr.map(function(currentValue,index,arr),thisValue)</code></p>
+<p>map()方法会返回一个新数组，该方法按照原始数组元素顺序依次处理元素<br>语法：<code>arr.map(callback(currentValue,index,arr),thisValue)</code></p>
 </blockquote>
-<h2 id="第一个参数为回调函数-1"><a href="#第一个参数为回调函数-1" class="headerlink" title="第一个参数为回调函数"></a>第一个参数为回调函数</h2><ul>
-<li>currentValue：（必须）当前元素</li>
-<li>index：可选，当前元素的索引值</li>
-<li>arr：可选，当前元素所属的数组对象<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3];</span><br><span class="line">arr.map(item =&gt; {</span><br><span class="line">    return item +1 ; //[2,3,4]</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
+<p>callback<br>    - currentValue：（必须）当前元素<br>    - index：可选，当前元素的索引值<br>    - arr：可选，当前元素所属的数组对象</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3];</span><br><span class="line">arr.map(item =&gt; {</span><br><span class="line">    return item +1 ; //[2,3,4]</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+
 <h2 id="第二个参数-1"><a href="#第二个参数-1" class="headerlink" title="第二个参数"></a>第二个参数</h2><blockquote>
 <p>用来绑定参数函数内部的this变量</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = ['a','b','c'];</span><br><span class="line">[1,2].map(function(e){</span><br><span class="line">    return this[e]; //['b','c']</span><br><span class="line">},arr)</span><br></pre></td></tr></tbody></table></figure>
 <p>该方法还可以进行链式调用</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3];</span><br><span class="line">arr.map(item =&gt; item + 1).map(item =&gt; item +1)//输出结果:[3,4,5]</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Point-1"><a href="#Point-1" class="headerlink" title="Point"></a>Point</h2><ul>
+<li>map方法不会对空数组进行检测</li>
+<li>map方法遍历数组时会返回一个新数组，不改变原始数组</li>
+<li>map方法有返回值，可以return出来，map的回调函数函数中支持return返回值</li>
+</ul>
+<h1 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h1><blockquote>
+<p>for…of语句创建一个循环来迭代可迭代的对象，在es6中引入的for…of替代for…in和forEach</p>
+</blockquote>
+<p>语法：<code>for(variable of iterable){ statement }</code></p>
+<ul>
+<li>variable:每个迭代的属性值被分配给该变量</li>
+<li>iterable：一个具有可枚举属性并且可以迭代的对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let arr =[</span><br><span class="line">    {id:1,value:'hello'},</span><br><span class="line">    {id:2,value:'world'},</span><br><span class="line">    {id:3,value:'Javascript'}</span><br><span class="line">]</span><br><span class="line">for(let item of arr){</span><br><span class="line">    console.log(item);</span><br><span class="line">    //{id:1,value:'hello'},</span><br><span class="line">    //{id:2,value:'world'},</span><br><span class="line">    //{id:3,value:'Javascript'}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>for of方法只会遍历当前对象的属性，不会遍历其原型链上的属性</li>
+<li>for of方法适用遍历<strong>数组/类数组/字符串/map/set</strong>等拥有迭代对象的集合</li>
+<li>for of方法不支持遍历普通对象，因为其没有迭代器对象，如果想要遍历一个对象的属性可以使用for in方法</li>
+<li>可以使用break，continue，return来中断循环遍历</li>
+</ul>
+<h1 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h1><blockquote>
+<p>filter()方法用于过滤数组，满足条件的元素会被返回，它的参数是一个回调函数，所有数组元素一次执行该函数，结果为true的元素被返回，如果没有符合条件的元素，则会返回空数组</p>
+</blockquote>
+<p>语法：<code>arr.filter(callback(currentValue,index,arr),thisValue)</code></p>
+<p>callback<br>    - currentValue:必须，数组中正在处理的元素<br>    - index：可选，当前元素索引<br>    - arr：可选，当前元素所属的数组对象</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4,5]</span><br><span class="line">arr.filter(item =&gt; item &gt; 2)</span><br><span class="line">//[3,4,5]</span><br></pre></td></tr></tbody></table></figure>
+<p>第二个参数用来绑定函数内部的this变量</p>
+<blockquote>
+<p>可以使用filter方法来移除数组中的undefined，null，NAN等值</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,undefined,2,null,3,false,'',4,0]</span><br><span class="line">arr.filter(Boolean);//[1,2,3,4]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>filter方法会返回新数组，不会改变原数组</li>
+<li>filter方法不会对空数组进行检测</li>
+<li>filter方法仅仅用于检测数组</li>
+</ul>
+<h1 id="some-every"><a href="#some-every" class="headerlink" title="some(),every()"></a>some(),every()</h1><blockquote>
+<p>some方法会对数组中的每一项进行遍历，只要有一个元素符合条件，就会返回true，且剩余的元素不会再进行检测，否则就返回false<br>语法<code>arr.some(function(currentValue,index,arr),thisValue)</code></p>
+</blockquote>
+<blockquote>
+<p>every()方法会对数组中的每一项进行遍历，只有所有元素都符合条件时，才会返回true，如果数组中检测到有个元素不满足，则整个表达式返回false，且剩余的元素不会再进行检测<br>语法：<code>arr.every(function(currentValue,index,arr),thisValue)</code></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5]</span><br><span class="line">arr.some(item =&gt; item &gt; 4) // true</span><br><span class="line"></span><br><span class="line">let arr = [1,2,3,4]</span><br><span class="line">arr.every(item =&gt; item &gt;0) //true</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Point-2"><a href="#Point-2" class="headerlink" title="Point"></a>Point</h2><ul>
+<li>两个方法都不会改变原数组，会返回一个布尔值</li>
+<li>两个方法都不会对空数组进行检测</li>
+<li>两个方法都适用于检测数组</li>
+</ul>
+<h1 id="reduce-reduceRight"><a href="#reduce-reduceRight" class="headerlink" title="reduce(),reduceRight()"></a>reduce(),reduceRight()</h1><blockquote>
+<p>reduce()方法接受一个函数作为累加器，数组中的每个值(从左到右)开始缩减，最终计算为一个值，reduce()可以作为一个高阶函数<br>语法：<code>arr.reduce(function(total,currentValue,currentIndex,arr)initialValue)</code></p>
+</blockquote>
 </article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><em></em><a class="button is-default" href="/2021/10/14/baseVue/" title="Vue基础一"><span class="has-text-weight-semibold">Next: Vue基础一</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="Fizzbow/Fizzbow.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>
