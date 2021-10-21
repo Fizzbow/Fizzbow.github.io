@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>其他遍历方法</title>
+      <link href="/2021/10/21/ergodic3/"/>
+      <url>/2021/10/21/ergodic3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="for"><a href="#for" class="headerlink" title="for"></a>for</h1><blockquote><p>在执行的时候，会先判断执行条件再执行，for循环可以用来遍历数组，字符串，类数组，DOM节点等，可以改变原数组</p></blockquote><h1 id="while"><a href="#while" class="headerlink" title="while"></a>while</h1><blockquote><p>while循环中的结束条件可以是各种类型，但是最终都会转化为布尔值</p></blockquote><ul><li>Boolean：true，false</li><li>String：空字符串为false，所有费控字符串为true</li><li>Number：0为false，非0数字为true</li><li>null/Undefinded/NaN:全为假</li><li>Object：全为真</li></ul><p>while和for一样，都是先判断再执行，只要指定条件为true，循环就可以一直执行代码</p><h1 id="do-while"><a href="#do-while" class="headerlink" title="do/while"></a>do/while</h1><blockquote><p>该方法会先执行再判断，即使初始条件不成立,do/while循环也会至少执行一次，不建议使用do/while来遍历数组</p></blockquote><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let num = 10;</span><br><span class="line">do {</span><br><span class="line">    console.log(num);</span><br><span class="line">    num--;</span><br><span class="line">}</span><br><span class="line">while(num &gt;= 0);</span><br><span class="line">console.log(num); //-1</span><br></pre></td></tr></tbody></table></figure><h1 id="for-await-of"><a href="#for-await-of" class="headerlink" title="for await of"></a>for await of</h1><blockquote><p><code>for await of</code>方法被称为异步迭代器，该方法是主要用来遍历异步对象<br><code>for await of</code>语句会在异步或者同步可迭代对象上创建一个迭代循环，包括String，Array，类数组，Map，Set和自定义的异步或者同步可迭代对象。这个语句只能在async function内使用</p></blockquote><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function Gen(time) {</span><br><span class="line">    return new Promise((resolve,reject) =&gt; {</span><br><span class="line">        setTimeout(function(){</span><br><span class="line">            resolve(time)</span><br><span class="line">        },time)</span><br><span class="line">    })</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">async function test (){</span><br><span class="line">    let arr = [Gen(2000),Gen(100),Gen(3000)]</span><br><span class="line">    for await(let item of arr){</span><br><span class="line">        console.log(Promise,Date.now(),item)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">test()</span><br></pre></td></tr></tbody></table></figure><p>输出结果：<br><img src="async.jpg" alt="alt"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS对象遍历方法</title>
       <link href="/2021/10/21/ergodic2/"/>
       <url>/2021/10/21/ergodic2/</url>
