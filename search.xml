@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>git命令</title>
+      <link href="/2021/11/03/gitInstruct/"/>
+      <url>/2021/11/03/gitInstruct/</url>
+      
+        <content type="html"><![CDATA[<p><code>git checkout</code>（切换分支） -b xx 创建新分支xx</p><p><code>git branch</code>：当前分支</p><p><code>git status</code> ：检查当前分支的文件状态</p><p><code>git add .</code>：添加到暂存区</p><p><code>git push -u origin xx</code> 第一次推送新分支xx</p><h2 id="合并分支（合并xx到主分支）"><a href="#合并分支（合并xx到主分支）" class="headerlink" title="合并分支（合并xx到主分支）"></a>合并分支（合并xx到主分支）</h2><p><code>git checkout main</code></p><p><code>git merge xx</code></p><p><code>git push</code> 推送到云端</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue生命周期</title>
       <link href="/2021/11/03/lifeVue/"/>
       <url>/2021/11/03/lifeVue/</url>
