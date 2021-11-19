@@ -24,6 +24,7 @@
     transform: translateY(0); }
 
 .post-page .post-content code {
+  float: left;
   border-radius: 4px;
   background: var(--third-bg-color); }
 
