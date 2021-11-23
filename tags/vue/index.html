@@ -28,8 +28,14 @@ beforeMount
 
 
 mounted
-组件挂载..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/03/lifeVue/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/22/vue-shop/">vue-shop</a></h2><time class="has-text-grey" datetime="2021-10-22T14:28:42.000Z">2021-10-22</time><p class="is-flex-grow-2 mt-2">后台token：客户端和服务端状态保存如果不进行服务器与浏览器跨域，使用cookie和session记录状态，如果要前端与服务器进行跨域要通过token方式维持状态
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/22/vue-shop/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/09/paper-vuex/"><img class="post-cover-img js-img-fadeIn" src="1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/09/paper-vuex/">vuex</a></h2><time class="has-text-grey" datetime="2021-10-09T11:07:44.000Z">2021-10-09</time><p class="is-flex-grow-2 mt-2">Vuex
+组件挂载..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/03/lifeVue/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/22/vue-shop/">vue-shop</a></h2><time class="has-text-grey" datetime="2021-10-22T14:28:42.000Z">2021-10-22</time><p class="is-flex-grow-2 mt-2">优化分离开发模式与发布模式
+通过vue-cli3.0工具生成的项目，默认隐藏了所有的webpack配置项，如果要修改webpack默认配置的需求，可以在跟目录中按需创建vue.config.js这个配置文件，从而对项目的打包发布过程做自定义的配置默认情况下vue的开发模式与发布模式共用一个打包的入口文件，为了将项目的开发过程与发布过程分离，我们可以分为两种模式各自指定打包的入口文件开发模式入口：src/main-dev.js发布模式入口：src/main-prod.js
+
+修改webpack配置方式
+
+configureWebpack：链式编程的形式
+chainWebpack(项目采用)：操作对象的形式
+NODE_ENV是一个用户自定义的变量，在webpack中它的用途是判断生产环境或开发环境vue.con..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/22/vue-shop/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/09/paper-vuex/"><img class="post-cover-img js-img-fadeIn" src="1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/09/paper-vuex/">vuex</a></h2><time class="has-text-grey" datetime="2021-10-09T11:07:44.000Z">2021-10-09</time><p class="is-flex-grow-2 mt-2">Vuex
 
 当多个组件依赖于同一状态时，对于多层嵌套的组件的传参将会非常繁琐，并且对于兄弟组件间的状态无能为力
 来自不同组件的行为需要变更同一状态，以往采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。以上的这些模式非常脆弱，通常会导致无法维护的代码
