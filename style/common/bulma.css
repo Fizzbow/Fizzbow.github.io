@@ -351,7 +351,7 @@ code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: cursive;
 }
 
 body {
@@ -376,10 +376,10 @@ a:hover {
 }
 
 code {
-  background-color:#0E1832;
+  background-color: whitesmoke;
   color: #da1039;
   font-size: 0.875em;
-  font-weight: normal;
+  font-weight: bold;
   padding: 0.25em 0.5em 0.25em;
 }
 
@@ -2020,7 +2020,7 @@ fieldset[disabled] .button {
 .content figure {
   margin-left: 2em;
   margin-right: 2em;
-
+  text-align: center;
 }
 
 .content figure:not(:first-child) {
