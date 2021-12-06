@@ -1,0 +1,195 @@
+<!DOCTYPE html><html class="appearance-light" lang="en"><head><meta charset="UTF-8"><title>城市鹿's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/24/paper-closure/1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/24/paper-closure/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/24/paper-closure/1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/24/paper-closure/">变量作用域、闭包、js函数执行流程</a></h2><time class="has-text-grey" datetime="2021-09-24T05:42:25.000Z">2021-09-24</time><p class="is-flex-grow-2 mt-2">变量作用域嵌套函数
+当一个函数是在另一个函数中创建的时，该函数就称为嵌套的
+
+function sayHiBye(firstName,lastName){
+    function getFullName(){
+        return firstName + '' + lastName;
+    }
+    alert('Hello,' + getFullName());
+    alert('Bye' + getFullName())
+}
+
+这里创建的嵌套函数getFullName()是为了更加方便访问到外部变量，因此可以返回全名，也可以作为一个新对象的属性或结果返回一个嵌套函数（如下代码），之后可以在其他地方调用，不论在哪调用，它仍然可以访问相同的外部变量
+function makeCounter..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/24/paper-closure/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/20/paper-4/">数据结构</a></h2><time class="has-text-grey" datetime="2021-09-20T03:10:50.000Z">2021-09-20</time><p class="is-flex-grow-2 mt-2">数据结构栈
+一种遵从先进后出（LIFO）原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都靠近栈底
+一摞叠起来的数或盘子都可以看做一个栈，我们想要拿出最底下的书或盘子，一定要先将上面的书移走才可以
+栈也被用在编程语言的编译器和内存中保存变量，方法调用```angular2html//在js中使用类来实现一个栈class Stack {
+
+constructor() {this.items = []}
+// 入栈push(element) {this.items.push(element)}
+// 出栈pop() {return this.items.pop()}
+// 末位get peek() {return this.items[this.i..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/20/paper-4/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/12/post-name/tagData.gif" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/12/post-name/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/12/post-name/tagData.gif" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/12/post-name/">jump项目</a></h2><time class="has-text-grey" datetime="2021-09-12T05:36:47.000Z">2021-09-12</time><p class="is-flex-grow-2 mt-2">
+Object.create()Object.create(proto,[descriptors])
+
+完全可以取代__proto__
+Object.getPrototypeOf(obj) – 返回对象obj的[[Prototype]]
+Object.setPrototypeOf(obj,proto) – 将对象的[[prototype]]设置为proto
+
+let animal = {
+    eats:true
+};
+//常见一个以animal为原型的新对象
+let rabit = Object.create(animal);
+alert(rabibit.eats);
+alert(Object.getPrototypeOf(rabbit) === animal) //true
+//将rabbit的原型修..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/12/paper-3/image2.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/12/paper-3/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/12/paper-3/image2.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/hexo"><i class="tag post-item-tag">hexo</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/12/paper-3/">使用hexo报错总结</a></h2><time class="has-text-grey" datetime="2021-09-12T05:28:35.000Z">2021-09-12</time><p class="is-flex-grow-2 mt-2">
+从零开始搭建hexo到安装theme主题这段比较顺利，到安装主题之后开始出现错误
+
+1. Error:no such file or directory,scandir ‘….’加入主题之后运行所有hexo命令都会报如下错误排查之后，blog主题这一栏填成了别人主题的theme地址，直接写上theme主题名字就行了接着除了hexo-d其他命令都能运行
+2.spawn failed用hexo-d更新的时候报错 spawn failed检查了自己的github ssh地址 显示：but Github does not provide shell access更改myblog目录下的config.yml的repo
+3.not a git repository (or any of the parent dire..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/paper-3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/08/29/paper-1/">setTimeout与setInterval</a></h2><time class="has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time><p class="is-flex-grow-2 mt-2">setTimeout与setInterval
+有时我们并不想立即执行一个函数而是等待特定一段时间后再执行。这就是所谓的’计划调用(scheduling a call)’目前有两种方法可以实现：
+
+
+setTimeout：允许我们将函数推迟到一段时间间隔之后再执行
+setInterval：允许我们重复运行一个函数，从一段时间间隔之后开始运行，之后以该时间间隔连续重复运行该函数
+
+setTimeout语法：let timerId= setTimeout(func|code,[delay],[arg1],[arg2],...)
+
+func|code:想要执行的函数或代码字符串，一般传入的都是函数
+delay:执行前的延时，毫秒为单位1ms = 1s；
+arg1,arg2...:要传入被执行函数的参数列表例如下面这..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/08/29/paper-1/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/page/4/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><style>.search-widget .search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--second-text-color);
+}
+.search-widget .search-content {
+    position: absolute;
+    left: 0;
+    top: calc(100% - 3px);
+    z-index: 2;
+
+    width: 100%;
+    height: 0;
+    max-height: 550px;
+
+    overflow: auto;
+    box-sizing: border-box;
+
+    background: var(--top-bar-bg-color);
+    backdrop-filter: blur(var(--backdropFilter));
+    -webkit-backdrop-filter: blur(var(--backdropFilter));
+
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.08);
+}
+
+.search-widget .search-content a:hover h5 {
+    color: #3273dc!important;
+}
+</style><main class="aside-card-container search-widget is-relative"><label for="searchInput"><div class="is-flex px-4" id="searchButton"><i class="iconfont icon--search1 mr-1"></i><input class="search-input is-flex-grow-1" id="searchInput" placeholder="Search everything.."></div></label><section class="search-content content" id="searchContent"></section></main><script>var searchDatabase = []
+var searchInputEl = document.getElementById('searchInput')
+var searchButtonEl = document.getElementById('searchButton')
+var searchResultEl = document.getElementById('searchContent')
+
+searchInputEl.oninput = function (evt) {
+    var searchValue = evt.srcElement.value
+    var haveSearchValue = Boolean(searchValue.trim())
+    if (!haveSearchValue) {
+        searchResultEl.style.height = 0
+        searchResultEl.innerHTML = null
+        return
+    }
+
+    var searchResults = searching(searchValue)
+
+    if (searchResults.length > 0) {
+        renderSearchResults(searchResults)
+    }
+}
+
+function renderSearchResults(results) {
+    searchResultEl.innerHTML = null
+    var fragment = document.createDocumentFragment()
+
+    results.forEach(function (item) {
+        var link = document.createElement('a')
+        var title = document.createElement('h5')
+        var content = document.createElement('p')
+
+        title.className = 'mb-1'
+        title.innerText = item.title
+        content.innerText = item.content
+
+        link.href = item.link
+        link.appendChild(title)
+        link.appendChild(content)
+        link.className = 'p-4 is-block'
+
+        fragment.appendChild(link)
+    })
+
+    searchResultEl.appendChild(fragment)
+    searchResultEl.style.height = 'auto'
+}
+
+function searching(inputText) {
+    var inputTexts = inputText.split(' ')
+    var searchResults = []
+    inputTexts.forEach(function (searchKey) {
+        var haveSearchValue = Boolean(searchKey.trim())
+        if (!haveSearchValue) return
+
+        var key = searchKey.toLowerCase()
+
+        for (var entry of searchDatabase) {
+            var title = entry.getElementsByTagName('title')[0].textContent
+            var link = entry.getElementsByTagName('link')[0].getAttribute('href')
+            var contentWithTags = entry.getElementsByTagName('content')[0].textContent
+            var rawContent = contentWithTags.trim().replace(/<[^>]+>/g, '').toLowerCase()
+
+            var LENGTH = 80
+            var finalContent = ''
+            var contentLength = rawContent.length
+            var searchResultIdx = rawContent.indexOf(key)
+
+            var startIdx = searchResultIdx - 20,
+                endIdx = startIdx + LENGTH
+
+            if (startIdx < 0) {
+                startIdx = 0
+                endIdx = 100
+            }
+
+            endIdx > contentLength && (endIdx = contentLength)
+
+            finalContent = rawContent.substring(startIdx, endIdx)
+
+            if (title.indexOf(key) > -1 || searchResultIdx > -1) {
+                searchResults.push({
+                    link: link,
+                    title: title,
+                    content: finalContent
+                })
+            }
+        }
+    })
+    return searchResults
+}
+
+searchButtonEl.onclick = function () {
+    if (searchDatabase.length > 0) return;
+
+    fetch(window.location.href + '/search.xml').then(res => res.text()).then(res => {
+        var domparser = new DOMParser
+        var doc = domparser.parseFromString(res, 'application/xml')
+        searchDatabase = doc.getElementsByTagName('search')[0].children
+    })
+}</script><main class="aside-card-container profile-widget"><!-- todo: 使用取色工具动态阴影--><section class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center"><section class="is-flex is-justify-content-center avatar is-clipped skeleton"><!-- debug images "https://api.ixiaowai.cn/gqapi/gqapi.php"--><img class="js-img-fadeIn" src="/images/avatar.jpg" alt="user avatar"></section><h3 class="user-name">城市鹿</h3><blockquote class="has-text-centered is-relative"><span style="margin-bottom: 5px;">May the Force be with you</span></blockquote><address class="has-text-centered has-text-grey"><i class="iconfont icon-location" style="margin-right: 5px;"></i><span class="has-text-grey">https://fizzbow.github.io/</span></address></section><section class="sns-container is-flex is-justify-content-center is-align-items-center"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section></main><main class="aside-card-container recent-widget"><h3>Recent</h3><ul><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2021/09/24/paper-closure/1.jpg" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/09/24/paper-closure/">变量作用域、闭包、js函数执行流程</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-09-24T05:42:25.000Z">2021-09-24</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=数据" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/09/20/paper-4/">数据结构</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-09-20T03:10:50.000Z">2021-09-20</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2021/09/12/post-name/tagData.gif" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/09/12/post-name/">jump项目</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-09-12T05:36:47.000Z">2021-09-12</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="/2021/09/12/paper-3/image2.png" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/09/12/paper-3/">使用hexo报错总结</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-09-12T05:28:35.000Z">2021-09-12</time></section></li><li class="is-flex"><!-- change to element replace image placeholder--><img class="js-img-fadeIn" src="https://ui-avatars.com/api/?background=f5f5f5&amp;name=se" alt="cover"><!--else--><!--    div.post-img-placeholder--><section class="is-flex-grow-2"><p class="has-text-weight-semibold" style="line-height: 20px; font-size: 14px"><a href="/2021/08/29/paper-1/">setTimeout与setInterval</a></p><time class="has-text-weight-semibold has-text-grey" datetime="2021-08-29T14:12:27.000Z">2021-08-29</time></section></li></ul></main><main class="aside-card-container categories-widget category-page"><h3>Categories</h3><section><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%82%E6%AD%A5/">异步</a><span class="category-list-count">1</span></li></ul></section></main><main class="aside-card-container archives-widget"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">3</span></li></ul></section></main><main class="aside-card-container tag-widget"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/%E8%AE%A1%E7%BD%91"><span class="tag post-item-tag" style="margin-bottom: 5px;">计网</span></a><a href="/tags/element-ui"><span class="tag post-item-tag" style="margin-bottom: 5px;">element-ui</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>

@@ -11,9 +11,9 @@
 二、实现轻量lodash深克隆浅克隆先看看如何实现浅克隆，在浅克隆的基础上实现深克隆，思路如下
 
 我们只遍历它的私有属性obj.hasOwnProperty(key)(不会上升到原型链)
-私有属性obj[key]赋值给obj2[key]12345678910..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/03/deepClone/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/11/24/Garbage-collection/">垃圾回收</a></h2><time class="has-text-grey" datetime="2021-11-24T12:27:23.000Z">2021-11-24</time><p class="is-flex-grow-2 mt-2">垃圾回收机制《JavaScript高级程序设计》提到两种垃圾回收机制
+私有属性obj[key]赋值给obj2[key]let obj = {..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/03/deepClone/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/11/24/Garbage-collection/">垃圾回收</a></h2><time class="has-text-grey" datetime="2021-11-24T12:27:23.000Z">2021-11-24</time><p class="is-flex-grow-2 mt-2">垃圾回收机制《JavaScript高级程序设计》提到两种垃圾回收机制
 标记清除JavaScript 中最常用的垃圾收集方式是标记清除( mark-and-sweep)。当变量进入环境（例如，在函数中声明一个变量〉时，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进人环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。
-引用计数另外一种垃圾回收机制就是引用计数，这个用的相对较少。引用计数就是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型赋值给该变量时，则这个值的引用次数就是1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数就减1。当这个引用次数变为0时，说明这个变量已经没有价值，因此，在在机回收期..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/24/Garbage-collection/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="async.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/21/ergodic3/"><img class="post-cover-img js-img-fadeIn" src="async.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic3/">其他遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T05:14:27.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for
+引用计数另外一种垃圾回收机制就是引用计数，这个用的相对较少。引用计数就是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型赋值给该变量时，则这个值的引用次数就是1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数就减1。当这个引用次数变为0时，说明这个变量已经没有价值，因此，在在机回收期..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/24/Garbage-collection/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/10/21/ergodic3/async.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/21/ergodic3/"><img class="post-cover-img js-img-fadeIn" src="/2021/10/21/ergodic3/async.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic3/">其他遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T05:14:27.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for
 在执行的时候，会先判断执行条件再执行，for循环可以用来遍历数组，字符串，类数组，DOM节点等，可以改变原数组
 
 while
@@ -30,51 +30,38 @@ while和for一样，都是先判断再执行，只要指定条件为true，循�
 do/while
 该方法会先执行再判断，即使初始条件不成立,do/while循环也会至少执行一次，不建议使用do/while来遍历数组
 
-1234567let num = 10;do {    co..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic2/">JS对象遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T03:45:51.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for in
+let num = 10;
+do {
+    console..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic2/">JS对象遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T03:45:51.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for in
 for in主要用于循环对象属性，循环中的代码每执行一次，就会对对象的属性进行一次操作语法：
 
-123for(var i in obj) {    /*dosomthing*/}
+for(var i in obj) {
+    /*dosomthing*/
+}
+
 
 i：必须，指定的变量可以是数组元素，也可以是对象的属性
 obj：必须，指定迭代的对象
 
-123456var obj = {a:1,b:2,c:3}for(var i in obj){    console.log('键名',i);    console.log('键值',obj[i])}
+var obj = {a:1,b:2,c:3}
+
+for(var i in obj){
+    console.log('键名',i);
+    console.log('键值',obj[i])
+}
+
 输出结果：
-123456键名：a键值：1键名：b键值：2键名：c键值：3
+键名：a
+键值：1
+键名：b
+键值：2
+键名：c
+键值：3
+
 point
 for in放啊不仅会遍历当前对象的所有可枚举属性，还会遍历其原型链上的属性
 
-Object.keys()/Object.values()/Ob..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic2/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/17/jump/">JS数组遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-17T04:04:03.000Z">2021-10-17</time><p class="is-flex-grow-2 mt-2">forEach()
-forEach方法用于调用数组中的每个元素，将元素传递给回调函数，数组中的每个值都会调用回调函数语法：arr.forEach(callback(currentValue,index,arr),isValue)
-
-callback    - currentValue：（必须）当前元素    - index：可选，当前元素的索引值    - arr：可选，当前元素所属的数组对象
-1234let arr = [1,2,3,4,5]arr.forEach((item,index,arr) =&amp;gt;{    console.log(index + ':' + item)})
-
-第二个参数用来绑定回调函数内的this变量(回调不能是箭头函数，因为箭头函数无this)
-
-12345let arr =..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/17/jump/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/25/paper-prototype/"><img class="post-cover-img js-img-fadeIn" src="1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-prototype/">JS原型</a></h2><time class="has-text-grey" datetime="2021-09-25T09:04:16.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">Prototype函数对象和普通对象
-在js中，创建对象有好几种方式，比如对象字面量，或者是直接通过构造函数new一个对象出来，虽然都是对象，却存在着差异性，js中，我们将对象分为函数对象和普通对象。函数对象就是用函数来模拟类的实现
-
-1234567891011function func1(){}const func2 = function(){};const func3 = new Function('name','console.log(name)');const obj1 = {};const obj2 = new Object();const obj3 = new func1();const obj4 = new new Function();console.log(typeof Object);/..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-prototype/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-this/">this/apply/call/bind</a></h2><time class="has-text-grey" datetime="2021-09-25T02:02:47.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">this指向
-es5中，this永远指向最后调用它的对象
-
-12345678910var name = 'windowsName';var a = {    name:null,    fn:function(){        console.log(this.name); //windowsName    }}var f = a.fn;f();
-虽然将a对象的fn方法赋值给变量f了，但是没有调用所以fn()，最后仍然是被window调用的
-怎么改变this指向1.箭头函数1234567891011121314var name = windowsName;var a ={    name:'csl',    func1:function(){        console.log(this.name)  ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-this/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/24/paper-closure/"><img class="post-cover-img js-img-fadeIn" src="1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/24/paper-closure/">变量作用域、闭包、js函数执行流程</a></h2><time class="has-text-grey" datetime="2021-09-24T05:42:25.000Z">2021-09-24</time><p class="is-flex-grow-2 mt-2">变量作用域嵌套函数
-当一个函数是在另一个函数中创建的时，该函数就称为嵌套的
-
-1234567function sayHiBye(firstName,lastName){    function getFullName(){        return firstName + '' + lastName;    }    alert('Hello,' + getFullName());    alert('Bye' + getFullName())}
-这里创建的嵌套函数getFullName()是为了更加方便访问到外部变量，因此可以返回全名，也可以作为一个新对象的属性或结果返回一个嵌套函数（如下代码），之后可以在其他地方调用，不论在哪调用，它仍然可以访问相同的外部变量
-123456789function ma..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/24/paper-closure/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/20/paper-4/">数据结构</a></h2><time class="has-text-grey" datetime="2021-09-20T03:10:50.000Z">2021-09-20</time><p class="is-flex-grow-2 mt-2">数据结构栈
-一种遵从先进后出（LIFO）原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都靠近栈底
-一摞叠起来的数或盘子都可以看做一个栈，我们想要拿出最底下的书或盘子，一定要先将上面的书移走才可以
-栈也被用在编程语言的编译器和内存中保存变量，方法调用12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455//在js中使用类来实现一个栈class Stack {constructor() {this.items = []}// 入栈push(element) {this.items.push(eleme..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/20/paper-4/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/12/post-name/">jump项目</a></h2><time class="has-text-grey" datetime="2021-09-12T05:36:47.000Z">2021-09-12</time><p class="is-flex-grow-2 mt-2">Object.create()Object.create(proto,[descriptors])
-
-完全可以取代__proto__
-Object.getPrototypeOf(obj) – 返回对象obj的[[Prototype]]
-Object.setPrototypeOf(obj,proto) – 将对象的[[prototype]]设置为proto
-
-123456789let animal = {    eats:true};//常见一个以animal为原型的新对象let rabit = Object.create(animal);alert(rabibit.eats);alert(Object.getPrototypeOf(rabbit) === animal) //true//将rabbit的原型..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><span class="page-number current">1</span><a class="page-number" href="/tags/js/page/2/">2</a><a class="extend next" rel="next" href="/tags/js/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/%E8%AE%A1%E7%BD%91"><span class="tag post-item-tag" style="margin-bottom: 5px;">计网</span></a><a href="/tags/element-ui"><span class="tag post-item-tag" style="margin-bottom: 5px;">element-ui</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+Object.keys()/Object.values()/Ob..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic2/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><span class="page-number current">1</span><a class="page-number" href="/tags/js/page/2/">2</a><a class="page-number" href="/tags/js/page/3/">3</a><a class="extend next" rel="next" href="/tags/js/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/%E8%AE%A1%E7%BD%91"><span class="tag post-item-tag" style="margin-bottom: 5px;">计网</span></a><a href="/tags/element-ui"><span class="tag post-item-tag" style="margin-bottom: 5px;">element-ui</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
