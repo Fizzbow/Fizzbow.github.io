@@ -106,7 +106,9 @@ promise.then(successCallback,failureCallback)
 &gt; 返回一个新的 promise, 只有所有的 promise 都成功才成功。
 </code></pre>
 <p>javascript<br>let promise1 = new Promise((resolve,reject)=&gt;{<br>    setTimeout(()=&gt;{<br>       resolve(1);<br>    },2000)<br>});<br>let promise2 = new Promise((resolve,reject)=&gt;{<br>    setTimeout(()=&gt;{<br>       resolve(2);<br>    },1000)<br>});<br>let promise3 = new Promise((resolve,reject)=&gt;{<br>    setTimeout(()=&gt;{<br>       resolve(3);<br>    },3000)<br>});<br>Promise.all([promise1,promise2,promise3]).then(res=&gt;{<br>    console.log(res);<br>    //结果为：[1,2,3]<br>})</p>
-<pre><code>### race()
+<pre><code>
+
+### race()
 
 &gt; 返回一个新的 promise, 第一个完成的 promise 的结果状态就是最终的结果状态(并非是数组中的第一个，而是第一个完成的 promise)
 </code></pre>
