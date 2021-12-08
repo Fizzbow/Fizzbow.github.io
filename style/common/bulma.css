@@ -351,7 +351,7 @@ code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: cursive;
+  font-family: Fira Sans ;
 }
 
 body {
@@ -379,7 +379,7 @@ code {
   background-color: whitesmoke;
   color: #da1039;
   font-size: 0.875em;
-  font-weight: bold;
+  font-weight: normal;
   padding: 0.25em 0.5em 0.25em;
 }
 
