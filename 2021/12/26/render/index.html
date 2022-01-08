@@ -1,0 +1,170 @@
+<!DOCTYPE html><html class="appearance-light" lang="en"><head><meta charset="UTF-8"><title>从render函数到vue的渲染机制</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="
+昨天在github上看到vue-global的一个issue，一个伙计说他不希望看到组件里有DOM元素，所以希望开发者把源码中的render函数从render：h=&amp;gt; h()变为 h=&amp;gt;null，开发者回复他说 : We do rely on it being mounted/removed though as this allows us to turn the listeners on/off with a v-if，看到这个对话勾起了我的疑问关于render和DOM的渲染有什么关系呢
+
+对render渲染函数的官方解释
+当我们需要高效地更新DOM树上所有的节点时
+可以写在模板里面比如&amp;lt;h1&amp;gt;{{ blogTitle }}&amp;lt;/h1&amp;gt;
+等同于渲染函数：render().."><meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">从render函数到vue的渲染机制</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9render%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%98%E6%96%B9%E8%A7%A3%E9%87%8A"><span class="toc-text">对render渲染函数的官方解释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#h"><span class="toc-text">h()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8render%E6%9B%BF%E4%BB%A3template%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">使用render替代template的情况</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E6%B8%B2%E6%9F%93"><span class="toc-text">Vue渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9FDOM"><span class="toc-text">虚拟DOM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">从render函数到vue的渲染机制</h1><time class="has-text-grey" datetime="2021-12-25T16:14:18.000Z">2021-12-26</time><article class="mt-2 post-content"><blockquote>
+<p>昨天在github上看到vue-global的一个issue，一个伙计说他不希望看到组件里有DOM元素，所以希望开发者把源码中的render函数从<code>render：h=&gt; h()</code>变为 <code>h=&gt;null</code>，开发者回复他说 : We do rely on it being mounted/removed though as this allows us to turn the listeners on/off with a v-if，看到这个对话勾起了我的疑问关于render和DOM的渲染有什么关系呢</p>
+</blockquote>
+<h1 id="对render渲染函数的官方解释"><a href="#对render渲染函数的官方解释" class="headerlink" title="对render渲染函数的官方解释"></a>对<a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/render-function.html#%E8%99%9A%E6%8B%9F-dom-%E6%A0%91">render渲染函数</a>的官方解释</h1><ul>
+<li>当我们需要高效地更新DOM树上所有的节点时<ul>
+<li>可以写在模板里面比如<code>&lt;h1&gt;{{ blogTitle }}&lt;/h1&gt;</code></li>
+<li>等同于渲染函数：<pre><code>render() {
+ return h('h1',{},this.blogTitle)
+}
+</code></pre>
+<blockquote>
+<p>vue中编写可复用的组件是基于render函数</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="h"><a href="#h" class="headerlink" title="h()"></a>h()</h2><blockquote>
+<p>我们知道，Vue通过建立一个虚拟DOM来<strong>追踪自己</strong>要如何改变真实DOM，通俗来讲render中的h()返回的就是一个虚拟DOM</p>
+</blockquote>
+<blockquote>
+<p>render的<code>h()</code>函数可以说是一个createNodeDescription，但它返回的是一个虚拟节点(VNode)，也许可以更准确地将其命名为createVNode，它所包含的信息会告诉Vue页面上需要渲染什么样的节点，包括其子节点的描述信息</p>
+</blockquote>
+<ul>
+<li><p>h()函数接收三个参数：</p>
+<ul>
+<li>如果没有prop，通常可以将children作为第二个参数传入，或者将null作为第二个参数传入，children作为第三个参数传入</li>
+</ul>
+<pre><code>h(
+    //{Str | Obj |Func} (必须)
+    'div',
+
+    //{ Obj } props (与attribute、prop和事件相对应的对象，可选)
+    {},
+
+    //{ Str | Arr | Obj } children (子VNodes，有插槽的对象，可选)
+     [
+        'Some text comes first.',
+        h('h1', 'A headline'),
+        h(MyComponent, {
+        someProp: 'foobar'
+        })
+     ]
+
+)
+</code></pre>
+<ul>
+<li>如果你需要重复很多次的元素/组件，你可以使用工厂函数实现比如：</li>
+</ul>
+<pre><code>//渲染20个段落
+render() {
+    return h('div',
+    Array.from({length:20}).map(() =&gt; {
+        return h('p','hi')
+    })
+    )
+}
+</code></pre>
+<ul>
+<li>要为某个组件创建一个VNode传递给h的第一个参数应该是组件本身</li>
+</ul>
+<pre><code>render() {
+    return h(ButtonCounter)
+}
+</code></pre>
+<h2 id="使用render替代template的情况"><a href="#使用render替代template的情况" class="headerlink" title="使用render替代template的情况"></a>使用render替代template的情况</h2></li>
+<li><p>我们需要通过level的prop动态生成heading标签的组件，template的实现形式如下</p>
+<blockquote>
+<p>为了在不同级别的标题中插入锚点元素，我们需要重复使用<code>&lt;slot&gt;&lt;/slot&gt;</code></p>
+</blockquote>
+</li>
+</ul>
+<pre><code>&lt;!-- HTML --&gt;
+&lt;script type="text/x-template" id="anchored-heading-template"&gt;
+    &lt;h1 v-if="level === 1"&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/h1&gt;
+    &lt;h2 v-else-if="level === 2"&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/h2&gt;
+    &lt;h3 v-else-if="level === 3"&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/h3&gt;
+&lt;/script&gt;
+
+&lt;!-- Javascript --&gt;
+
+Vue.component('anchored-heading', {
+    template: '#anchored-heading-template',
+    props: {
+        level: {
+            type: Number,
+            required: true
+        }
+    }
+})
+</code></pre>
+<ul>
+<li>当使用render函数时，将会变得简单很多</li>
+</ul>
+<pre><code>Vue.component('anchored-heading', {
+    render() {
+         h (createElement) {
+            return createElement(
+            'h' + this.level,   // tag name 标签名称
+            this.$slots.default // 子组件中的阵列
+        )
+    }
+    },
+    props: {
+        level: {
+            type: Number,
+            required: true
+        }
+    }
+})
+</code></pre>
+<h1 id="Vue渲染"><a href="#Vue渲染" class="headerlink" title="Vue渲染"></a>Vue渲染</h1><p> <img src="/2021/12/26/render/vue1.jpg" alt="alt"></p>
+<ul>
+<li>上图从宏观上展示了vue的整体流程。<ul>
+<li><p><code>render</code>函数可以作为一道分割线，<code>render</code>函数的左边可以称之为编译期，将Vue的模板转换为渲染函数。</p>
+<blockquote>
+<p>模板通过编译生成AST,再由AST生成Vue的render函数</p>
+</blockquote>
+</li>
+<li><p><code>render</code>函数的右边是Vue的运行，主要基于渲染函数生成Virtual DOM数，Diff和Patch</p>
+<blockquote>
+<p>渲染函数结合数据生成Virtual DOM树，Diff和Patch后生成新的UI</p>
+<blockquote>
+<p>每个Vue组件都有一个对应的watcher，这个watcher会在组件渲染的时候手机组件所依赖的数据，并在依赖有更新的时候，触发组件重新渲染</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><p><img src="/2021/12/26/render/VNode.png" alt="alt"></p>
+<ul>
+<li>简单来讲,Vue的编译器在编译模板之后，会把这些模板编译成一个渲染函数，当函数被调用的时候就会渲染并且返回一个虚拟DOM树，结合vue自带的响应系统，在状态改变时，Vue能够智能地计算出重新渲染组件的 最小代价并到DOM操作上</li>
+<li>Vue支持我们通过data参数传递一个js对象作为组件数据，然后Vue将遍历此对象属性，使用<code>Object.defineProperty</code>方法描述对象，通过存取函数可以追踪该属性的变更，Vue创建了一层Watch层，在组件渲染的过程中把属性记录为依赖，当依赖项的setter被调用时，会通知watcher重新计算，从而使它关联的组件得以更新，如下图：<br><img src="/2021/12/26/render/VDOM1.webp" alt="alt"></li>
+</ul>
+<p>模板到真实DOM过程图：</p>
+<p><img src="/2021/12/26/render/VDOM.webp" alt="alt"></p>
+<p>这里会涉及到Vue的另外两个概念：</p>
+<blockquote>
+<p>独立构建：包含模板编译器，渲染过程HTML字符串 → render函数 → VNode → 真实DOM节点<br>运行时构建：不包含模板编译器，渲染过程render函数 → VNode → 真实DOM节点</p>
+<blockquote>
+<p>运行时构建的包，会比独立构建少一个模板编译器。在$mount函数上也不同。而$mount方法又是整个渲染过程的起始点</p>
+</blockquote>
+</blockquote>
+<p>独立构建流程图<br><img src="/2021/12/26/render/mount1.webp" alt="alt"></p>
+<p>运行时构建<br><img src="/2021/12/26/render/mount2.webp" alt="alt"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>回过头来看，Vue中的渲染核心关键的几步流程还是非常清晰的：</p>
+<ul>
+<li>new Vue，执行初始化</li>
+<li>挂载$mount方法，通过自定义render方法、template、el等生成render函数</li>
+<li>通过Watcher监听数据的变化</li>
+<li>当数据发生变化时，render函数执行生成VNode对象</li>
+<li>通过patch方法，对比新旧VNode对象，通过DOM Diff算法，添加、修改、删除真正的DOM元素<br>至此，整个new Vue的渲染过程完毕。</li>
+</ul>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2022/01/04/eng-january/" title="January2022"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: January2022</span></a><a class="button is-default" href="/2021/12/24/git2/" title="使用git出现的一些问题"><span class="has-text-weight-semibold">Next: 使用git出现的一些问题</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="Fizzbow/Fizzbow.github.io" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2022</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/post.js"></script></body></html>

@@ -1,7 +1,70 @@
 <!DOCTYPE html><html class="appearance-light" lang="en"><head><meta charset="UTF-8"><title>城市鹿's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
 <!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Tags · js</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/17/jump/">JS数组遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-17T04:04:03.000Z">2021-10-17</time><p class="is-flex-grow-2 mt-2">forEach()
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Tags · js</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/designModel/">设计模式</a></h2><time class="has-text-grey" datetime="2021-10-21T10:19:21.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">JavaScript观察者模式
+观察者模式是一种软件设计模式，一个被观察者的对象维护一组观察者的对象，这些对象依赖于被观察者，被观察者自动将自身的状态的任何变化通知给它们，具体的职责如下
+
+
+被观察者：维护一组观察者，提供用于增加和移除观察者的方法
+观察者：提供一个更新接口，用于当被观察者发生变化时得到通知
+具体的被观察者：状态发生变化时广播通知给观察者，保持具体的观察者的信息
+具体的观察者：保持一个指向具体被观察者的引用，实现一个更新接口用于观察以便保证自身状态总是和被观察者状态一致的
+
+ES5下的实现Objecet.defineProperty
+var targetObj={
+  age:1
+}
+
+function observer(oldval,newval){
+  console.log('name..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/designModel/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/10/21/ergodic3/async.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/21/ergodic3/"><img class="post-cover-img js-img-fadeIn" src="/2021/10/21/ergodic3/async.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic3/">其他遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T05:14:27.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for
+在执行的时候，会先判断执行条件再执行，for循环可以用来遍历数组，字符串，类数组，DOM节点等，可以改变原数组
+
+while
+while循环中的结束条件可以是各种类型，但是最终都会转化为布尔值
+
+
+Boolean：true，false
+String：空字符串为false，所有非空字符串为true
+Number：0为false，非0数字为true
+null/Undefinded/NaN:全为假
+Object：全为真
+
+while和for一样，都是先判断再执行，只要指定条件为true，循环就可以一直执行代码
+do/while
+该方法会先执行再判断，即使初始条件不成立,do/while循环也会至少执行一次，不建议使用do/while来遍历数组
+
+let num = 10;
+do {
+    console..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic3/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/21/ergodic2/">JS对象遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-21T03:45:51.000Z">2021-10-21</time><p class="is-flex-grow-2 mt-2">for in
+for in主要用于循环对象属性，循环中的代码每执行一次，就会对对象的属性进行一次操作语法：
+
+for(var i in obj) {
+    /*dosomthing*/
+}
+
+
+i：必须，指定的变量可以是数组元素，也可以是对象的属性
+obj：必须，指定迭代的对象
+
+var obj = {a:1,b:2,c:3}
+
+for(var i in obj){
+    console.log('键名',i);
+    console.log('键值',obj[i])
+}
+
+输出结果：
+键名：a
+键值：1
+键名：b
+键值：2
+键名：c
+键值：3
+
+point
+for in方法不仅会遍历当前对象的所有可枚举属性，还会遍历其原型链上的属性
+
+Object.keys()/Object.values()/Ob..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/21/ergodic2/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/17/jump/">JS数组遍历方法</a></h2><time class="has-text-grey" datetime="2021-10-17T04:04:03.000Z">2021-10-17</time><p class="is-flex-grow-2 mt-2">forEach()
 forEach方法用于调用数组中的每个元素，将元素传递给回调函数，数组中的每个值都会调用回调函数语法：arr.forEach(callback(currentValue,index,arr),isValue)
 
 callback    - currentValue：（必须）当前元素    - index：可选，当前元素的索引值    - arr：可选，当前元素所属的数组对象
@@ -13,58 +76,13 @@ arr.forEach((item,index,arr) =&amp;gt;{
 
 第二个参数用来绑定回调函数内的this变量(回调不能是箭头函数，因为箭头函数无this)
 
-let arr = [1,2..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/17/jump/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/25/paper-prototype/1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/25/paper-prototype/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/25/paper-prototype/1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-prototype/">JS原型</a></h2><time class="has-text-grey" datetime="2021-09-25T09:04:16.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">Prototype函数对象和普通对象
-在js中，创建对象有好几种方式，比如对象字面量，或者是直接通过构造函数new一个对象出来，虽然都是对象，却存在着差异性，js中，我们将对象分为函数对象和普通对象。函数对象就是用函数来模拟类的实现
-
-function func1(){}
-const func2 = function(){};
-const func3 = new Function('name','console.log(name)');
-
-const obj1 = {};
-const obj2 = new Object();
-const obj3 = new func1();
-const obj4 = new new Function();
-
-console.log(typeof Object);//fun..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-prototype/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-this/">this/apply/call/bind</a></h2><time class="has-text-grey" datetime="2021-09-25T02:02:47.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">this指向
-es5中，this永远指向最后调用它的对象
-
-var name = 'windowsName';
-var a = {
-    name:null,
-
-    fn:function(){
-        console.log(this.name); //windowsName
-    }
-}
-var f = a.fn;
-f();
-
-虽然将a对象的fn方法赋值给变量f了，但是没有调用所以fn()，最后仍然是被window调用的
-怎么改变this指向1.箭头函数var name = windowsName;
-var a ={
-    name:'csl',
-    func1:function(){
-        console.log(this.name)
-    },
-    func2:..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-this/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/24/paper-closure/1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/24/paper-closure/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/24/paper-closure/1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/24/paper-closure/">变量作用域、闭包、js函数执行流程</a></h2><time class="has-text-grey" datetime="2021-09-24T05:42:25.000Z">2021-09-24</time><p class="is-flex-grow-2 mt-2">变量作用域嵌套函数
-当一个函数是在另一个函数中创建的时，该函数就称为嵌套的
-
-function sayHiBye(firstName,lastName){
-    function getFullName(){
-        return firstName + '' + lastName;
-    }
-    alert('Hello,' + getFullName());
-    alert('Bye' + getFullName())
-}
-
-这里创建的嵌套函数getFullName()是为了更加方便访问到外部变量，因此可以返回全名，也可以作为一个新对象的属性或结果返回一个嵌套函数（如下代码），之后可以在其他地方调用，不论在哪调用，它仍然可以访问相同的外部变量
-function makeCounter..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/24/paper-closure/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/tags/js/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/tags/js/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/js/page/3/">3</a><a class="extend next" rel="next" href="/tags/js/page/3/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/%E8%AE%A1%E7%BD%91"><span class="tag post-item-tag" style="margin-bottom: 5px;">计网</span></a><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/element-ui"><span class="tag post-item-tag" style="margin-bottom: 5px;">element-ui</span></a><a href="/tags/%E8%8B%B1%E8%AF%AD"><span class="tag post-item-tag" style="margin-bottom: 5px;">英语</span></a><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+let arr = [1,2..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/17/jump/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/tags/js/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/tags/js/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/js/page/3/">3</a><a class="page-number" href="/tags/js/page/4/">4</a><a class="extend next" rel="next" href="/tags/js/page/3/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container tag-widget is-in-tag-page"><h3>Tags</h3><section><a href="/tags/vue"><span class="tag post-item-tag" style="margin-bottom: 5px;">vue</span></a><a href="/tags/react"><span class="tag post-item-tag" style="margin-bottom: 5px;">react</span></a><a href="/tags/js"><span class="tag post-item-tag" style="margin-bottom: 5px;">js</span></a><a href="/tags/%E5%BC%82%E6%AD%A5"><span class="tag post-item-tag" style="margin-bottom: 5px;">异步</span></a><a href="/tags/%E8%AE%A1%E7%BD%91"><span class="tag post-item-tag" style="margin-bottom: 5px;">计网</span></a><a href="/tags/element-ui"><span class="tag post-item-tag" style="margin-bottom: 5px;">element-ui</span></a><a href="/tags/%E8%8B%B1%E8%AF%AD"><span class="tag post-item-tag" style="margin-bottom: 5px;">英语</span></a><a href="/tags/git"><span class="tag post-item-tag" style="margin-bottom: 5px;">git</span></a><a href="/tags/hexo"><span class="tag post-item-tag" style="margin-bottom: 5px;">hexo</span></a><a href="/tags/css"><span class="tag post-item-tag" style="margin-bottom: 5px;">css</span></a></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
 
     images.forEach($claudia.blurBackdropImg)
-}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2022</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')

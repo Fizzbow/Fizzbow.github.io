@@ -1,68 +1,62 @@
 <!DOCTYPE html><html class="appearance-light" lang="en"><head><meta charset="UTF-8"><title>城市鹿's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
 <!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2021</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-this/">this/apply/call/bind</a></h2><time class="has-text-grey" datetime="2021-09-25T02:02:47.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">this指向
-es5中，this永远指向最后调用它的对象
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2021</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/14/baseVue/">Vue文档阅读笔记</a></h2><time class="has-text-grey" datetime="2021-10-14T04:19:13.000Z">2021-10-14</time><p class="is-flex-grow-2 mt-2">指令相关
+指令（Directives）的职责是当表达式的值发生改变时将其产生的连带影响**响应式地作用于DOM**，除了v-for，v-on，指令attribute的预期值是单个JavaScript表达式
 
-var name = 'windowsName';
-var a = {
-    name:null,
 
-    fn:function(){
-        console.log(this.name); //windowsName
-    }
-}
-var f = a.fn;
-f();
+动态绑定
+对于动态参数的规定  动态参数预期会求出一个字符串（除了null），这个null值可以用于显式地移除绑定
 
-虽然将a对象的fn方法赋值给变量f了，但是没有调用所以fn()，最后仍然是被window调用的
-怎么改变this指向1.箭头函数var name = windowsName;
-var a ={
-    name:'csl',
-    func1:function(){
-        console.log(this.name)
-    },
-    func2:..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-this/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/24/paper-closure/1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/24/paper-closure/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/24/paper-closure/1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/24/paper-closure/">变量作用域、闭包、js函数执行流程</a></h2><time class="has-text-grey" datetime="2021-09-24T05:42:25.000Z">2021-09-24</time><p class="is-flex-grow-2 mt-2">变量作用域嵌套函数
-当一个函数是在另一个函数中创建的时，该函数就称为嵌套的
 
-function sayHiBye(firstName,lastName){
-    function getFullName(){
-        return firstName + '' + lastName;
-    }
-    alert('Hello,' + getFullName());
-    alert('Bye' + getFullName())
-}
 
-这里创建的嵌套函数getFullName()是为了更加方便访问到外部变量，因此可以返回全名，也可以作为一个新对象的属性或结果返回一个嵌套函数（如下代码），之后可以在其他地方调用，不论在哪调用，它仍然可以访问相同的外部变量
-function makeCounter..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/24/paper-closure/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/20/paper-4/">数据结构</a></h2><time class="has-text-grey" datetime="2021-09-20T03:10:50.000Z">2021-09-20</time><p class="is-flex-grow-2 mt-2">数据结构栈
-一种遵从先进后出（LIFO）原则的有序集合；新添加的或待删除的元素都保存在栈的末尾，称作栈顶，另一端为栈底。在栈里，新元素都靠近栈顶，旧元素都靠近栈底
-一摞叠起来的数或盘子都可以看做一个栈，我们想要拿出最底下的书或盘子，一定要先将上面的书移走才可以
-栈也被用在编程语言的编译器和内存中保存变量，方法调用```angular2html//在js中使用类来实现一个栈class Stack {
 
-constructor() {this.items = []}
-// 入栈push(element) {this.items.push(element)}
-// 出栈pop() {return this.items.pop()}
-// 末位get peek() {return this.items[this.i..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/20/paper-4/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/12/post-name/tagData.gif" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/12/post-name/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/12/post-name/tagData.gif" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/12/post-name/">jump项目</a></h2><time class="has-text-grey" datetime="2021-09-12T05:36:47.000Z">2021-09-12</time><p class="is-flex-grow-2 mt-2">
-Object.create()Object.create(proto,[descriptors])
+&amp;lt;a :[attributeName]=&quot;url&quot;&amp;gt;...&amp;lt;/a&amp;gt;:这里的attributeName会被作为一个JavaScript表达式进行动态求值。比如你的组件实例有一个data property为attributeName的值为”href”，那么这个绑定将等价于v-bind:href
 
-完全可以取代__proto__
-Object.getPrototypeOf(obj) – 返回对象obj的[[Prototype]]
-Object.setPrototypeOf(obj,proto) – 将对象的[[prototype]]设置为proto
 
-let animal = {
-    eats:true
-};
-//常见一个以animal为原型的新对象
-let rabit = Object.create(animal);
-alert(rabibit.eats);
-alert(Object.getPrototypeOf(rabbit) === animal) //true
-//将rabbit的原型修..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/12/post-name/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/2021/page/5/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/4/">4</a><a class="page-number" href="/archives/2021/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2021/page/7/">7</a><a class="extend next" rel="next" href="/archives/2021/page/7/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">3</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+指令修饰符
+
+
+修饰符（modifier）表现形式为.，规定了..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/14/baseVue/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/10/09/paper-vuex/1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/09/paper-vuex/"><img class="post-cover-img js-img-fadeIn" src="/2021/10/09/paper-vuex/1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/09/paper-vuex/">vuex</a></h2><time class="has-text-grey" datetime="2021-10-09T11:07:44.000Z">2021-10-09</time><p class="is-flex-grow-2 mt-2">Vuex
+
+当多个组件依赖于同一状态时，对于多层嵌套的组件的传参将会非常繁琐，并且对于兄弟组件间的状态无能为力
+来自不同组件的行为需要变更同一状态，以往采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。以上的这些模式非常脆弱，通常会导致无法维护的代码
+综上，当项目遇到多个组件依赖于同一状态时；或者来自不同组件的行为需要变更同一状态时可以使用Vuex
+
+
+Vuex实现了一个单向数据流，在全局中拥有一个State存放数据，当组件要更改State中的数据时，必须通过Mutation进行，Mutation同时提供了订阅者模式供外部插件调用获取State数据的更新，而当所以异步操作（常见于调用后端接口异步获取更新数据）或批量的同步操作需要走Action，但Action也是无法直接修改State的，还是需要通..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/09/paper-vuex/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/10/05/paper-project-VueWhere/api1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/10/05/paper-project-VueWhere/"><img class="post-cover-img js-img-fadeIn" src="/2021/10/05/paper-project-VueWhere/api1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/05/paper-project-VueWhere/">Vue项目，仿写去哪儿app</a></h2><time class="has-text-grey" datetime="2021-10-05T06:03:49.000Z">2021-10-05</time><p class="is-flex-grow-2 mt-2">
+css部分解决文字溢出的方法：textOverflow()  white-space:nowrap;  text-overflow:ellipsis;  overflow:hidden;
+表格边框写法首页数据前台接口部分优化冗余路径
+把http://localhost:8080/static/mock   冗余的路径替换成api
+
+
+
+修改系统文件，在webpack下设置代理项，重置路径
+
+
+vue路由项目中使用到的路由跳转的方法router-link实现hot页面上点击的城市渲染到header上
+
+不带参数&amp;lt;router-link :to = &quot;{name:'home'}&quot;&amp;gt; 建议使用name&amp;lt;router-link :to = &quot;{path:'/home'}&quot;&amp;gt;
+
+router..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/05/paper-project-VueWhere/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/09/25/paper-prototype/1.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/09/25/paper-prototype/"><img class="post-cover-img js-img-fadeIn" src="/2021/09/25/paper-prototype/1.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/js"><i class="tag post-item-tag">js</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/09/25/paper-prototype/">原型概念及继承实现</a></h2><time class="has-text-grey" datetime="2021-09-25T09:04:16.000Z">2021-09-25</time><p class="is-flex-grow-2 mt-2">Prototype函数对象和普通对象
+在js中，创建对象有好几种方式，比如对象字面量，或者是直接通过构造函数new一个对象出来，虽然都是对象，却存在着差异性，js中，我们将对象分为函数对象和普通对象。函数对象就是用函数来模拟类的实现
+
+function func1(){}
+const func2 = function(){};
+const func3 = new Function('name','console.log(name)');
+
+const obj1 = {};
+const obj2 = new Object();
+const obj3 = new func1();
+const obj4 = new new Function();
+
+console.log(typeof Object);//fun..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/09/25/paper-prototype/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/2021/page/5/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/4/">4</a><a class="page-number" href="/archives/2021/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2021/page/7/">7</a><a class="page-number" href="/archives/2021/page/8/">8</a><a class="extend next" rel="next" href="/archives/2021/page/7/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a><span class="archive-list-count">3</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
 
     images.forEach($claudia.blurBackdropImg)
-}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2021</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/Fizzbow"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> 城市鹿 2022</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
