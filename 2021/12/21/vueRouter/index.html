@@ -4,17 +4,18 @@ Props(父-&amp;gt;子)
 Vue的设计理念之单向数据流即父子之间的数据传递只能从父-&amp;gt;子，不能逆流，而Prop就是父-&amp;gt;子之间的衔接处Prop是你可以在组件上注册的一些自定义attribute，比如为了给博文组件传递一个标题，我们可以用props选项将其包含在该组件可接受的prop列表中
 
 html
+&amp;lt;!--可以使用v-bind来动态传递prop--&amp;gt;
 &amp;lt;div id = &quot;blog-post-demo&quot;&amp;gt;
     &amp;lt;blog-post v-for=&quot;post in posts&quot;
                :key = &quot;post.id&quot;
-               :title = &quot;post.title&quot;
-    &amp;gt;&amp;lt;/blog-post&amp;gt;.."><meta name="generator" content="Hexo 5.4.0">
+               :title = &quot;post..."><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">城市鹿's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">vue-router实现组件通信</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">父子组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Props-%E7%88%B6-gt-%E5%AD%90"><span class="toc-text">Props(父-&gt;子)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#emit-%E5%AD%90-gt-%E7%88%B6"><span class="toc-text">emit(子-&gt;父)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#router"><span class="toc-text">router</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">vue-router实现组件通信</h1><time class="has-text-grey" datetime="2021-12-21T13:59:42.000Z">2021-12-21</time><article class="mt-2 post-content"><h1 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h1><p>当需要组件之间通信时（父子），有以下几种方式：</p>
 <h2 id="Props-父-gt-子"><a href="#Props-父-gt-子" class="headerlink" title="Props(父->子)"></a>Props(父-&gt;子)</h2><blockquote>
 <p>Vue的设计理念之单向数据流即父子之间的数据传递只能从父-&gt;子，不能逆流，而Prop就是父-&gt;子之间的衔接处<br>Prop是你可以在组件上注册的一些自定义attribute，比如为了给博文组件传递一个标题，我们可以用props选项将其包含在该组件可接受的prop列表中</p>
 </blockquote>
 <pre><code>html
+&lt;!--可以使用v-bind来动态传递prop--&gt;
 &lt;div id = "blog-post-demo"&gt;
     &lt;blog-post v-for="post in posts"
                :key = "post.id"
@@ -46,7 +47,54 @@ app.mount('#blog-post-demo')
 <p>Since components are reusable instances, they accept the same options as a root instance, such as data, computed, watch, methods, and lifecycle hooks.</p>
 </blockquote>
 <h2 id="emit-子-gt-父"><a href="#emit-子-gt-父" class="headerlink" title="emit(子->父)"></a>emit(子-&gt;父)</h2><blockquote>
-<p>当我们在开发<blog-post>组件时，它的一些功能可能需要与父组件进行沟通，例如我们可能会引入一个按钮来放大博文字号，其他页面保持默认字号<br>但是这种方式需要在父组件里嵌套的子组件里绑定方法，如果我们使用了路由时，子组件占位符则为<code> &lt;router-view&gt;&lt;/router-view&gt;</code>，这个时候则需要使用路由传参</blog-post></p>
+<p>当我们在开发<blog-post>组件时，它的一些功能可能需要与父组件进行沟通，例如我们可能会引入一个按钮来放大博文字号，其他页面保持默认字号</blog-post></p>
+</blockquote>
+<ul>
+<li>父组件中：</li>
+</ul>
+<pre><code>const App = {
+  data() {
+    return {
+      posts: [
+        /* ... */
+      ],
+      postFontSize: 1
+    }
+  }
+}
+</code></pre>
+<ul>
+<li>通过 <code>@enlarge-text="postFontSize += 0.1</code>监听器，父组件能够接收事件并更新<code>postFontSize</code>的值</li>
+</ul>
+<pre><code>&lt;div id="blog-posts-events-demo"&gt;
+  &lt;div :style="{ fontSize: postFontSize + 'em' }"&gt;
+    &lt;blog-post
+      v-for="post in posts"
+      :key="post.id"
+      :title="post.title"
+       @enlarge-text="postFontSize += 0.1
+    &gt;&lt;/blog-post&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>现在我们在每篇博文之前添加一个按钮来放大字号，子组件可以通过调用内建的<code>$emit</code>方法并传入事件名称来触发一个事件</li>
+</ul>
+<pre><code>app.component('blog-post', {
+  props: ['title'],
+  emit:'enlargeText',//3.x更新版本，可以通过 emits 选项来定义组件可触发的事件
+  template: `
+    &lt;div class="blog-post"&gt;
+      &lt;h4&gt;{{ title }}&lt;/h4&gt;
+      &lt;button $emit('enlargeText')&gt;
+        Enlarge text
+      &lt;/button&gt;
+    &lt;/div&gt;
+  `
+})
+</code></pre>
+<blockquote>
+<p>但是这种方式需要在父组件里嵌套的子组件里绑定方法，如果我们使用了路由时，子组件占位符则为<code> &lt;router-view&gt;&lt;/router-view&gt;</code>，这个时候则需要使用路由传参</p>
 </blockquote>
 <h2 id="router"><a href="#router" class="headerlink" title="router"></a>router</h2><ul>
 <li><p>我们摒弃了$router这种高耦合写法，取而代之的是props，这样方便你可以在任何地方使用该组件，使得该组件更易于复用测试</p>

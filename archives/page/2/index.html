@@ -18,11 +18,11 @@ Props(父-&amp;gt;子)
 Vue的设计理念之单向数据流即父子之间的数据传递只能从父-&amp;gt;子，不能逆流，而Prop就是父-&amp;gt;子之间的衔接处Prop是你可以在组件上注册的一些自定义attribute，比如为了给博文组件传递一个标题，我们可以用props选项将其包含在该组件可接受的prop列表中
 
 html
+&amp;lt;!--可以使用v-bind来动态传递prop--&amp;gt;
 &amp;lt;div id = &quot;blog-post-demo&quot;&amp;gt;
     &amp;lt;blog-post v-for=&quot;post in posts&quot;
                :key = &quot;post.id&quot;
-               :title = &quot;post.title&quot;
-    &amp;gt;&amp;lt;/blog-post&amp;gt;..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/21/vueRouter/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/12/21/vueClass/">在vue中优雅地使用css</a></h2><time class="has-text-grey" datetime="2021-12-21T13:41:38.000Z">2021-12-21</time><p class="is-flex-grow-2 mt-2">vue中动态添加类point:
+               :title = &quot;post...</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/21/vueRouter/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/vue"><i class="tag post-item-tag">vue</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/12/21/vueClass/">在vue中优雅地使用css</a></h2><time class="has-text-grey" datetime="2021-12-21T13:41:38.000Z">2021-12-21</time><p class="is-flex-grow-2 mt-2">vue中动态添加类point:
 
 classList.add(‘active’) : 相当于在原有的类加上一个类,比如&amp;lt;div class = 'click active'&amp;gt;&amp;lt;/div&amp;gt;
 
